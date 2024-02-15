@@ -22,38 +22,61 @@ function getComputerChoice() {
 
 function playGame(playerSelection, computerSelection){
     if (playerSelection === "rock" && computerSelection === "rock") {
-        console.log("tie")
+        return "tie"
     } else
     if (playerSelection === "rock" && computerSelection === "paper") {
-        console.log("lose")
+        return "lose"
     } else
     if (playerSelection === "rock" && computerSelection === "scissors") {
-        console.log("win")
+        return "win"
     } else
     if (playerSelection === "paper" && computerSelection === "rock") {
-        console.log("win")
+        return "win"
     } else
     if (playerSelection === "paper" && computerSelection === "paper") {
-        console.log("tie")
+        return "tie"
     } else
     if (playerSelection === "paper" && computerSelection === "scissors") {
-        console.log("lose")
+        return "lose"
     } else
     if (playerSelection === "scissors" && computerSelection === "rock") {
-        console.log("lose")
+        return "lose"
     } else
     if (playerSelection === "scissors" && computerSelection === "paper") {
-        console.log("win")
+        return "win"
     } else
     if (playerSelection === "scissors" && computerSelection === "scissors") {
-        console.log("tie")
+        return "tie" 
     }
 }
 
-const computerSelection = getComputerChoice()
-const playerSelection = prompt("choose rock, paper or scissors").toLowerCase()
-const gameResult = playGame(playerSelection, computerSelection)
-console.log(computerSelection)
+function score(result){
+    if (result === "win") {
+        return playerScore++
+    } else
+    if (result === "lose") {
+        return computerScore++
+    }
+}
+
+
+function playGame5(){
+    console.log(playerScore)
+}
+
+let playerScore = 0
+let computerScore = 0
+
+const computerPlay = getComputerChoice()
+const playerPlay = prompt("choose rock, paper or scissors").toLowerCase()
+const gameResult = playGame(playerPlay, computerPlay);
+const gameScore = score(gameResult)
+// const gameResult5 = playGame5()
+console.log(computerPlay)
+console.log(gameResult)
+console.log(playerScore)
+console.log(computerScore)
+
 
 
 
