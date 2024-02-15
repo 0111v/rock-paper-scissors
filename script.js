@@ -29,11 +29,29 @@ function playGame(playerSelection, computerSelection){
     } else
     if (playerSelection === "rock" && computerSelection === "scissors") {
         console.log("win")
+    } else
+    if (playerSelection === "paper" && computerSelection === "rock") {
+        console.log("win")
+    } else
+    if (playerSelection === "paper" && computerSelection === "paper") {
+        console.log("tie")
+    } else
+    if (playerSelection === "paper" && computerSelection === "scissors") {
+        console.log("lose")
+    } else
+    if (playerSelection === "scissors" && computerSelection === "rock") {
+        console.log("lose")
+    } else
+    if (playerSelection === "scissors" && computerSelection === "paper") {
+        console.log("win")
+    } else
+    if (playerSelection === "scissors" && computerSelection === "scissors") {
+        console.log("tie")
     }
 }
 
 const computerSelection = getComputerChoice()
-const playerSelection = prompt()
+const playerSelection = prompt("choose rock, paper or scissors").toLowerCase()
 const gameResult = playGame(playerSelection, computerSelection)
 console.log(computerSelection)
 
