@@ -11,6 +11,15 @@
 // const b = getComputerChoice()
 // const c = getComputerChoice()
 
+const button1 = document.getElementById("button1")
+const button2 = document.getElementById("button2")
+const button3 = document.getElementById("button3")
+const resultText = document.getElementById("resultText")
+const compText = document.getElementById("compText")
+const playerScoreText = document.getElementById("playerScoreText")
+const computerScoreText = document.getElementById("computerScoreText") 
+
+
 
 
 function getComputerChoice() {
@@ -50,32 +59,101 @@ function playGame(playerSelection, computerSelection){
     }
 }
 
-function score(result){
-    if (result === "win") {
-        return playerScore++
-    } else
-    if (result === "lose") {
-        return computerScore++
-    }
-}
 
 
-function playGame5(){
-    console.log(playerScore)
-}
+// function playGame5(){
+//     for (let i = 0; i < 5; i++) {
+//         const computerPlay = getComputerChoice()
+//         const playerPlay = prompt("choose rock, paper or scissors").toLowerCase()
+//         const gameResult = playGame(playerPlay, computerPlay);
+//         console.log(computerPlay)
+//         console.log(gameResult)
+//         if (gameResult === "win") {
+//             playerScore++
+//         } else
+//         if (gameResult === "lose") {
+//             computerScore++
+//         }
+//     }
+// }
+
 
 let playerScore = 0
 let computerScore = 0
 
-const computerPlay = getComputerChoice()
-const playerPlay = prompt("choose rock, paper or scissors").toLowerCase()
-const gameResult = playGame(playerPlay, computerPlay);
-const gameScore = score(gameResult)
+
+
+button1.onclick = function() {
+    const compPlay = getComputerChoice()
+    const gameRes = playGame("rock", compPlay)
+    console.log(gameRes)
+    resultText.innerText = gameRes
+    compText.innerText = compPlay
+    if (gameRes == 'win') {
+        playerScore++
+    } else if(gameRes == 'lose') {
+        computerScore++
+    }
+    playerScoreText.innerText = playerScore
+    computerScoreText.innerText = computerScore
+    if (playerScore == 5) {
+        alert('player win!')
+    }
+    if (computerScore == 5) {
+        alert('computer win!')
+    }
+ }
+
+ button2.onclick = function() {
+    const compPlay = getComputerChoice()
+    const gameRes = playGame("paper", compPlay)
+    console.log(gameRes)
+    resultText.innerText = gameRes
+    compText.innerText = compPlay
+    if (gameRes == 'win') {
+        playerScore++
+    } else if(gameRes == 'lose') {
+        computerScore++
+    }
+    playerScoreText.innerText = playerScore
+    computerScoreText.innerText = computerScore
+    if (playerScore == 5) {
+        alert('player win!')
+    }
+    if (computerScore == 5) {
+        alert('computer win!')
+    }
+ }
+
+ button3.onclick = function() {
+    const compPlay = getComputerChoice()
+    const gameRes = playGame("scissors", compPlay)
+    console.log(gameRes)
+    resultText.innerText = gameRes
+    compText.innerText = compPlay
+    if (gameRes == 'win') {
+        playerScore++
+    } else if(gameRes == 'lose') {
+        computerScore++
+    }
+    playerScoreText.innerText = playerScore
+    computerScoreText.innerText = computerScore
+    if (playerScore == 5) {
+        alert('player win!')
+    }
+    if (computerScore == 5) {
+        alert('computer win!')
+    }
+ }
+
+
+
+// const gameScore = score(gameResult)
 // const gameResult5 = playGame5()
-console.log(computerPlay)
-console.log(gameResult)
-console.log(playerScore)
-console.log(computerScore)
+// console.log(computerPlay)
+// console.log(gameResult)
+// console.log(playerScore)
+// console.log(computerScore)
 
 
 
